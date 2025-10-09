@@ -9,13 +9,36 @@ class ContainerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Column(
         children: [
-          Obx(() =>  SmallContainer(text: '${controller.getCloudOver()}%', image: ImageAssets.heavyRain),),
-          Obx(() => SmallContainer(text : '${controller.getWindSpeed()}km/h',image : ImageAssets.wind),),
-          Obx(() =>  SmallContainer(text :'${controller.getHumidity()}%', image :ImageAssets.sun),),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Obx(() =>  SmallContainer(text: 'Rain\n ${controller.getCloudOver()}%', image: ImageAssets.heavyRain),),
+              Obx(() => SmallContainer(text : 'Wind\n ${controller.getWindSpeed()}km/h',image : ImageAssets.wind),),
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Obx(() =>  SmallContainer(text: 'Feel Like\n ${controller.getFeelLike()}%', image: ImageAssets.heavyRain),),
+              Obx(() =>  SmallContainer(text :'Sun\n ${controller.getHumidity()}%', image :ImageAssets.sun),),
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Obx(() => SmallContainer(text : 'Cloud Over\n ${controller.getCloudOver()}km/h',image : ImageAssets.wind),),
+              Obx(() =>  SmallContainer(text :'Condition\n ${controller.getCondition()}%', image :ImageAssets.sun),),
+            ],
+          ),
         ],
       ),
     );
