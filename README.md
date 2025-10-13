@@ -53,7 +53,7 @@ The app follows an MVVM (Model–View–ViewModel) architecture, ensuring modula
   </pre>
 
   <h2 id="installation">⚙️ Installation</h2>
-  <pre>git clone https://github.com/yourusername/clima_cast.git
+  <pre>git clone https://github.com/sumonece15/clima_cast.git
 cd clima_cast
 flutter pub get
 flutter run</pre>
